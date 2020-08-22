@@ -107,9 +107,6 @@
               }
               elseif ($_GET['halaman']=="quiz") {
                 include 'quiz.php';
-              } 
-              elseif ($_GET['halaman']=="help") {
-                include 'help.php';
               }
               elseif ($_GET['halaman']=="contact") {
                 include 'contact.php';
@@ -122,18 +119,6 @@
             include 'home.php';
           }
           ?>
-
-    
-
-    <!-- ======= Why Us Section ======= -->
-    <div id="page-wrapper" >
-       <div id="page-inner">
-          
-         </div>
-             <!-- /. PAGE INNER  -->
-            </div>
-         <!-- /. PAGE WRAPPER  -->
-  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
