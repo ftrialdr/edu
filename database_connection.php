@@ -1,16 +1,19 @@
 <?php
 
 //database_connection.php
-$mysqli = new
-mysqli("localhost","root","","widget");
+$mysqli = new mysqli("localhost","root","","widget");
+$dd = new mysqli("localhost","root","","db_download");
 
-//check connection         
+if ($dd -> connect_errno) {
+  echo "Failed to connect to MySQL: ". $dd -> connect_error;
+  exit();
+}
 if ($mysqli -> connect_errno) {
-    echo "Failed to connect to MySQL:
-    ". $mysqli -> connect_error;
+    echo "Failed to connect to MySQL: ". $mysqli -> connect_error;
     exit();
-            }
-$connect = new PDO("mysql:host=localhost;dbname=chat","root","");
+}
+
+$connect = new PDO("mysql:host=localhost;dbname=chat","root","syahid123");
 
 date_default_timezone_set('Asia/Kolkata');
 

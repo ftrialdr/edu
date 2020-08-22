@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php 
+	require 'database_connection.php';
+	$sql2 = "select x.kelas from courses x group by x.kelas having x.kelas != ''";
+	$query_p = $dd->query($sql2);
+?>
+
 <html lang="en">
 
 <head>
@@ -47,30 +53,20 @@
           <li><a href="index.php?halaman=quiz">Quiz</a></li>
           <li class="drop-down"><a href="index.php?halaman=courses">Courses</a>
             <ul>
-              <li><a href="#">Grade</a></li>
-                <li class="drop-down"><a href="#">X</a>
-                <ul>
-                  <li><a href="#">Dasar Desain Grafis</a></li>
-                  <li><a href="#">Pemrograman Dasar</a></li>
-                  <li><a href="#">Sistem Komputer</a></li>
-                  <li><a href="#">Komputer dan Jaringan Dasar</a></li>
-                  <li><a href="#">Simulasi Komunikasi dan Digital</a></li>
-                  </ul>
-                <li class="drop-down"><a href="#">XI</a>
-                <ul>
-                  <li><a href="#">Administrasi Infrastruktur Jaringan</a></li>
-                  <li><a href="#">Administrasi Sistem Jaringan</a></li>
-                  <li><a href="#">Teknologi Layanan Jaringan</a></li>
-                  <li><a href="#">Teknologi WAN</a></li>
-                  </ul>
-                <li class="drop-down"><a href="#">XII</a>
-                <ul>
-                  <li><a href="#">Administrasi Infrastruktur Jaringan</a></li>
-                  <li><a href="#">Administrasi Sistem Jaringan</a></li>
-                  <li><a href="#">Teknologi Layanan Jaringan</a></li>
-                  <li><a href="#">Teknologi WAN</a></li>
-                  </ul>
-              </li>
+							<li><a href="#">Grade</a></li>
+								<?php while($d = $query_p->fetch_array()) { ?>
+								<li class="drop-down"><a href="#"><?= $d['kelas'] ?></a>
+								<ul>
+									<?php 
+										$sql = "select x.mapel from (select mapel from courses where kelas = '".$d['kelas']."') as x group by x.mapel";
+										$q = $dd->query($sql);
+										$x = $q->fetch_all(MYSQLI_ASSOC);
+										foreach($x as $val) { 
+									?>
+									<li><a href="#"><?= $val['mapel'] ?></a></li>
+									<?php } ?>
+								</ul>
+								<?php } ?>
             </ul>
           </li>
           <li><a href="index.php?halaman=contact">Contact</a></li>

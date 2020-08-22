@@ -1,13 +1,5 @@
 <?php
-            $mysqli = new
-            mysqli("localhost","root","","db_download");
-
-            //check connection         
-            if ($mysqli -> connect_errno) {
-              echo "Failed to connect to MySQL:
-              ". $mysqli -> connect_error;
-              exit();
-            }
+	require 'database_connection.php';
 ?>  
 
   <!-- ======= Header ======= -->
@@ -69,30 +61,25 @@
 <!-- ======= Courses Section ======= -->
     <section id="courses" class="courses">
 
-      <?php $sql = "SELECT * from courses";
-      $query = $dbh->prepare($sql);
-      $query->execute();
-      $results=$query->fetchAll(PDO::FETCH_OBJ);
-      $cnt=1;
-      if($query->rowCount() > 0)
-      {
-      foreach($results as $result)
-      { ?>
-
-        <div class="container" data-aos="fade-up">
+   	<div class="container" data-aos="fade-up">
           
-          <div class="row" data-aos="zoom-in" data-aos-delay="100">
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+    	<div class="row" data-aos="zoom-in" data-aos-delay="100">
+<?php 
+			$sql = "SELECT * from courses";
+			$query = $dd->query($sql);
+			$i=1;
+			while($d = $query->fetch_array()) {
+?>
+            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch mt-4 mt-lg-0">
               <div class="course-item">
                 <img src="assets/img/ddg.jpg" class="img-fluid" alt="...">
                 <div class="course-content">
                   <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4>Kelas : <?php echo htmlentities($result->kelas);?></h4>
+                    <h4>Kelas : <?php echo htmlentities($d['kelas']);?></h4>
                   </div>
 
-                  <h3>Materi : <?php echo htmlentities($result->mapel);?></h3>
-                  <a href="course-details.php?idm=<?php echo htmlentities($result->id_materi);?>" class="get-started-btn">Details</a>
+                  <h3>Materi : <?php echo htmlentities($d['mapel']);?></h3>
+                  <a href="course-details.php?idm=<?php echo htmlentities($d['id_materi']);?>" class="get-started-btn">Details</a>
                   <div class="trainer d-flex justify-content-between align-items-center">
                     <div class="trainer-profile d-flex align-items-center">
                                  
@@ -105,11 +92,14 @@
                   </div>
                 </div>
               </div>
+        </div>
+
+<?php 
+				$i++; 
+			} 
+?>
             </div> <!-- End Course Item-->
           </div>
-
-      <?php }} ?>
-        </div>
         
     </section><!-- End Courses Section -->
 
