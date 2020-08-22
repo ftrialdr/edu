@@ -73,8 +73,13 @@ if(isset($_POST['login']))
     <body>  
         <div class="container">
 			<br />
-			
-			<h3 align="center">EduChat-Login</h3><br />
+			    <!-- ======= Breadcrumbs ======= -->
+			    <div class="breadcrumbs" data-aos="fade-in">
+			      <div class="container">
+			        <h2>EduChat</h2>
+			      </div>
+			    </div>
+			    <!-- End Breadcrumbs -->
 			<br />
 			<div class="panel panel-default">
   				<div class="panel-heading" align="center">Login to get your access</div>

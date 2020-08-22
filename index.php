@@ -42,7 +42,7 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.php">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="index.php?halaman=discuss">Discuss</a></li>
           <li><a href="index.php?halaman=quiz">Quiz</a></li>
           <li class="drop-down"><a href="index.php?halaman=courses">Courses</a>
@@ -103,7 +103,7 @@
                 include 'courses.php';
               }
               elseif ($_GET['halaman']=="discuss") {
-                include 'discuss.php';
+                include 'login.php';
               }
               elseif ($_GET['halaman']=="quiz") {
                 include 'quiz.php';
@@ -148,12 +148,6 @@
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Dukung kami dengan Subscribe Gratis</h4>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
 
         </div>
       </div>
