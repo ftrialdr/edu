@@ -21,6 +21,9 @@ if(!isset($_SESSION['user_id']))
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>EduChat</title>  
+        <!-- icons -->
+		<link href="assets/img/eduu.png" rel="icon">
+		<link href="assets/img/eduu.png" rel="eduu">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.css">

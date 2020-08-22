@@ -64,89 +64,53 @@
 
 
   <main id="main">
-
     
 
 <!-- ======= Courses Section ======= -->
     <section id="courses" class="courses">
-      <div class="container" data-aos="fade-up">
-        
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="course-item">
-              <img src="assets/img/ddg.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>X</h4>
-                </div>
+      <?php $sql = "SELECT * from courses";
+      $query = $dbh->prepare($sql);
+      $query->execute();
+      $results=$query->fetchAll(PDO::FETCH_OBJ);
+      $cnt=1;
+      if($query->rowCount() > 0)
+      {
+      foreach($results as $result)
+      { ?>
 
-                <h3><a href="courses.php?halaman=ddg">Dasar Desain Grafis</a></h3>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                               
+        <div class="container" data-aos="fade-up">
+          
+          <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+              <div class="course-item">
+                <img src="assets/img/ddg.jpg" class="img-fluid" alt="...">
+                <div class="course-content">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4>Kelas : <?php echo htmlentities($result->kelas);?></h4>
                   </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bx bx-user"></i>&nbsp;92
-                    &nbsp;&nbsp;
-                    <i class="bx bx-heart"></i>&nbsp;101
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
 
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="course-item">
-              <img src="assets/img/kjd.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>X</h4>
-                </div>
-
-                <h3><a href="courses.php?halaman=kjd">Komputer dan Jaringan Dasar</a></h3>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    
-                  </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bx bx-user"></i>&nbsp;115
-                    &nbsp;&nbsp;
-                    <i class="bx bx-heart"></i>&nbsp;185
+                  <h3>Materi : <?php echo htmlentities($result->mapel);?></h3>
+                  <a href="course-details.php?idm=<?php echo htmlentities($result->id_materi);?>" class="get-started-btn">Details</a>
+                  <div class="trainer d-flex justify-content-between align-items-center">
+                    <div class="trainer-profile d-flex align-items-center">
+                                 
+                    </div>
+                    <div class="trainer-rank d-flex align-items-center">
+                      <i class="bx bx-user"></i>&nbsp;92
+                      &nbsp;&nbsp;
+                      <i class="bx bx-heart"></i>&nbsp;101
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div> <!-- End Course Item-->
+            </div> <!-- End Course Item-->
+          </div>
 
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="course-item">
-              <img src="assets/img/pd.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>X</h4>
-                </div>
-
-                <h3><a href="courses.php?halaman=pd">Pemrograman Dasar</a></h3>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    
-                  </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bx bx-user"></i>&nbsp;104
-                    &nbsp;&nbsp;
-                    <i class="bx bx-heart"></i>&nbsp;123
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
+      <?php }} ?>
         </div>
-
-      </div>
+        
     </section><!-- End Courses Section -->
 
 
