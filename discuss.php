@@ -21,33 +21,49 @@ if(!isset($_SESSION['user_id']))
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>EduChat</title>  
-        <!-- icons -->
 		<link href="assets/img/eduu.png" rel="icon">
 		<link href="assets/img/eduu.png" rel="eduu">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+		<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+		<link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+		<link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+		<link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+		<link href="assets/vendor/aos/aos.css" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   		<script src="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.js"></script>
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
+  		<link href="assets/css/style.css" rel="stylesheet">
+
     </head>  
     <body>
         <div class="container">
-			<br />
-			
-			<h3 align="center">EduChat - Let's Discuss with Your Friends!</h3><br />
-			<br />
+        	<br>
+			    <!-- ======= Breadcrumbs ======= -->
+			    <div class="breadcrumbs">
+			      <div class="container">
+			        <h2>EduChat</h2>
+			      </div>
+			    </div>
+			    <!-- End Breadcrumbs -->
+			</br>
 			<div class="row">
 				<div class="col-md-8 col-sm-6">
-					<h4>Online User</h4>
+					<h4>-Online User-</h4>
 				</div>
+				<br>
+					<div align="right" class="col-md-2 col-sm-3">
+						<input type="hidden" id="is_active_group_chat_window" value="no" />
+						<button type="button" name="group_chat" id="group_chat" class="btn btn-warning btn-xs">Group Chat</button>
+					</div>
+				</br>
 				<div class="col-md-2 col-sm-3">
-					<input type="hidden" id="is_active_group_chat_window" value="no" />
-					<button type="button" name="group_chat" id="group_chat" class="btn btn-warning btn-xs">Group Chat</button>
-				</div>
-				<div class="col-md-2 col-sm-3">
-					<p align="right">Halo <?php echo $_SESSION['username']; ?>! - <a href="logout.php">Logout</a></p>
+					<h3 align="right">Hallo <?php echo $_SESSION['username']; ?>! - <a href="logout.php">Logout</a></h3>
 				</div>
 			</div>
 			<div class="table-responsive">

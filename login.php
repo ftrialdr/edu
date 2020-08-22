@@ -67,8 +67,11 @@ if(isset($_POST['login']))
         <title>EduChat-Login</title>  
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="assets/img/eduu.png" rel="icon">
+  		<link href="assets/img/eduu.png" rel="eduu">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  		<link href="assets/css/style.css" rel="stylesheet">
     </head>  
     <body>  
         <div class="container">
@@ -76,7 +79,7 @@ if(isset($_POST['login']))
 			    <!-- ======= Breadcrumbs ======= -->
 			    <div class="breadcrumbs" data-aos="fade-in">
 			      <div class="container">
-			        <h2>EduChat</h2>
+			        <h2>EduChat | Login</h2>
 			      </div>
 			    </div>
 			    <!-- End Breadcrumbs -->
