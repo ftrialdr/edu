@@ -73,7 +73,6 @@
               </li>
             </ul>
           </li>
-          <li><a href="index.php?halaman=help">Help</a></li>
           <li><a href="index.php?halaman=contact">Contact</a></li>
 
 
