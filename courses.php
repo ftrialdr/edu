@@ -70,9 +70,9 @@
     <section id="courses" class="courses">
 
       <?php $sql = "SELECT * from courses";
-      $query = $dbh->prepare($sql);
+      $query = $mysqli->prepare($sql);
       $query->execute();
-      $results=$query->fetchAll(PDO::FETCH_OBJ);
+      $results=$query->fetchAll();
       $cnt=1;
       if($query->rowCount() > 0)
       {
