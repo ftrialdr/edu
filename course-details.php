@@ -100,98 +100,105 @@
 
 
   <main id="main">
-<!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs" data-aos="fade-in">
-      <div class="container">
-        <h2>Course Details</h2>
-        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
-      </div>
-    </div><!-- End Breadcrumbs -->
-
-    <!-- ======= Cource Details Section ======= -->
-    <section id="course-details" class="course-details">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row">
-          <div class="col-lg-8">
-            <img src="assets/img/course-details.jpg" class="img-fluid" alt="">
-            <h3>Et enim incidunt fuga tempora</h3>
-            <p>
-              Qui et explicabo voluptatem et ab qui vero et voluptas. Sint voluptates temporibus quam autem. Atque nostrum voluptatum laudantium a doloremque enim et ut dicta. Nostrum ducimus est iure minima totam doloribus nisi ullam deserunt. Corporis aut officiis sit nihil est. Labore aut sapiente aperiam.
-              Qui voluptas qui vero ipsum ea voluptatem. Omnis et est. Voluptatem officia voluptatem adipisci et iusto provident doloremque consequatur. Quia et porro est. Et qui corrupti laudantium ipsa.
-              Eum quasi saepe aperiam qui delectus quaerat in. Vitae mollitia ipsa quam. Ipsa aut qui numquam eum iste est dolorum. Rem voluptas ut sit ut.
-            </p>
-          </div>
-          <div class="col-lg-4">
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-              <h5>Trainer</h5>
-              <p><a href="#">Walter White</a></p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-              <h5>Course Fee</h5>
-              <p>$165</p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-              <h5>Available Seats</h5>
-              <p>30</p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-              <h5>Schedule</h5>
-              <p>5.00 pm - 7.00 pm</p>
-            </div>
-
-          </div>
+  <!-- ======= Breadcrumbs ======= -->
+      <div class="breadcrumbs" data-aos="fade-in">
+        <div class="container">
+          <h2>Course Details</h2>
         </div>
+      </div><!-- End Breadcrumbs -->
 
-      </div>
-    </section><!-- End Cource Details Section -->
+      <!-- ======= Cource Details Section ======= -->
+      <section id="course-details" class="course-details">
+        <div class="container" data-aos="fade-up">
+          <?php 
+          $pid=intval($_GET['idm']);
+          $sql = "SELECT * from courses where id_materi=:idm";
+          $query = $dbh->prepare($sql);
+          $query -> (':idm', $idm, PDO::PARAM_STR);
+          $query->execute();
+          $results=$query->fetchAll(PDO::FETCH_OBJ);
+          $cnt=1;
+          if($query->rowCount() > 0)
+          {
+          foreach($results as $result)
+          { ?>
+              <div class="row">
+                <div class="col-lg-8">
+                  <img src="assets/img/course-details.jpg" class="img-fluid" alt="">
+                  <h3>Materi : <?php echo htmlentities($result->mapel);?></h3>
+                  <p><?php echo htmlentities($result->nama_file);?></p>
+                </div>
+                <div class="col-lg-4">
 
-    <!-- ======= Cource Details Tabs Section ======= -->
-    <section id="cource-details-tabs" class="cource-details-tabs">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row">
-          <div class="col-lg-3">
-            <ul class="nav nav-tabs flex-column">
-              <li class="nav-item">
-                <a class="nav-link active show" data-toggle="tab" href="#tab-1">Modi sit est</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-2">Unde praesentium sed</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-3">Pariatur explicabo vel</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-4">Nostrum qui quasi</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-5">Iusto ut expedita aut</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-9 mt-4 mt-lg-0">
-            <div class="tab-content">
-              <div class="tab-pane active show" id="tab-1">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Architecto ut aperiam autem id</h3>
-                    <p class="font-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                  <div class="course-info d-flex justify-content-between align-items-center">
+                    <h5>Trainer</h5>
+                    <p><a href="#">Walter White</a></p>
                   </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/course-details-tab-1.png" alt="" class="img-fluid">
+
+                  <div class="course-info d-flex justify-content-between align-items-center">
+                    <h5>Course Fee</h5>
+                    <p>$165</p>
                   </div>
+
+                  <div class="course-info d-flex justify-content-between align-items-center">
+                    <h5>Available Seats</h5>
+                    <p>30</p>
+                  </div>
+
+                  <div class="course-info d-flex justify-content-between align-items-center">
+                    <h5>Schedule</h5>
+                    <p>5.00 pm - 7.00 pm</p>
+                  </div>
+
                 </div>
               </div>
+          <?php }} ?>
+
+        </div>
+      </section><!-- End Cource Details Section -->
+
+      <!-- ======= Cource Details Tabs Section ======= -->
+      <section id="cource-details-tabs" class="cource-details-tabs">
+        <div class="container" data-aos="fade-up">
+
+          <div class="row">
+            <div class="col-lg-3">
+              <ul class="nav nav-tabs flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active show" data-toggle="tab" href="#tab-1">Modi sit est</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#tab-2">Unde praesentium sed</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#tab-3">Pariatur explicabo vel</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#tab-4">Nostrum qui quasi</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#tab-5">Iusto ut expedita aut</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-9 mt-4 mt-lg-0">
+              <div class="tab-content">
+                <div class="tab-pane active show" id="tab-1">
+                  <div class="row">
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                      <h3>Architecto ut aperiam autem id</h3>
+                      <p class="font-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                      <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="assets/img/course-details-tab-1.png" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
 
 
-      </div>
-    </section><!-- End Cource Details Tabs Section -->
+        </div>
+      </section><!-- End Cource Details Tabs Section -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
