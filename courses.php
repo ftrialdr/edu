@@ -72,7 +72,7 @@
           
       <div class="row" data-aos="zoom-in" data-aos-delay="100">
 <?php 
-      $sql = "SELECT * from courses" ;
+      $sql = "SELECT * from courses ORDER BY id_materi" ;
       $query = $dd->query($sql);
       $i=1;
       while($d = $query->fetch_array()) {
@@ -92,7 +92,7 @@
                                  
                     </div>
                     <div class="trainer-rank d-flex align-items-center">
-                      <a href="download.php?filename=<?=$data['nama_file']?>"class="get-started-btn">Download</a>
+                      <a href="download.php?filename=<?=$d['nama_file']?>"class="get-started-btn">Download</a>
                     </div>
                   </div>
                 </div>
