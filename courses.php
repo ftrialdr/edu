@@ -1,4 +1,14 @@
+<?php
+            $mysqli = new
+            mysqli("localhost","root","","db_download");
 
+            //check connection         
+            if ($mysqli -> connect_errno) {
+              echo "Failed to connect to MySQL:
+              ". $mysqli -> connect_error;
+              exit();
+            }
+?> 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
@@ -72,15 +82,17 @@
                 <div class="course-content">
                   <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4>Kelas : <?php echo htmlentities($d['kelas']);?></h4>
+                    <h4>Jurusan :<?php echo htmlentities($d['jurusan']);?></h4>
                   </div>
 
                   <h3>Materi : <?php echo htmlentities($d['mapel']);?></h3>
+                  <h4><?php echo htmlentities($d['nama_file']);?></h4>
                   <div class="trainer d-flex justify-content-between align-items-center">
                     <div class="trainer-profile d-flex align-items-center">
                                  
                     </div>
                     <div class="trainer-rank d-flex align-items-center">
-                      <a href="course-details.php?idm=<?php echo htmlentities($d['id_materi']);?>" class="get-started-btn">Details</a>
+                      <a href="download.php?filename=<?=$data['nama_file']?>"class="get-started-btn">Download</a>
                     </div>
                   </div>
                 </div>

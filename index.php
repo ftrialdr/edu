@@ -75,7 +75,7 @@
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="login.php" class="get-started-btn">Login</a>
+      <a href="login.php" class="get-started-btn">Join Chat</a>
 
     </div>
   </header><!-- End Header -->
