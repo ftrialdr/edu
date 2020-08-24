@@ -51,24 +51,7 @@
           <li><a href="index.php">Home</a></li>
           <li><a href="index.php?halaman=discuss">Discuss</a></li>
           <li><a href="index.php?halaman=quiz">Quiz</a></li>
-          <li class="drop-down"><a href="index.php?halaman=courses">Courses</a>
-            <ul>
-							<li><a href="#">Grade</a></li>
-								<?php while($d = $query_p->fetch_array()) { ?>
-								<li class="drop-down"><a href="#"><?= $d['kelas'] ?></a>
-								<ul>
-									<?php 
-										$sql = "select x.mapel from (select mapel from courses where kelas = '".$d['kelas']."') as x group by x.mapel";
-										$q = $dd->query($sql);
-										$x = $q->fetch_all(MYSQLI_ASSOC);
-										foreach($x as $val) { 
-									?>
-									<li><a href="#"><?= $val['mapel'] ?></a></li>
-									<?php } ?>
-								</ul>
-								<?php } ?>
-            </ul>
-          </li>
+          <li><a href="index.php?halaman=courses">Courses</a>
           <li><a href="index.php?halaman=contact">Contact</a></li>
 
 

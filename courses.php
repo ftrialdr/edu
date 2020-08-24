@@ -19,40 +19,10 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li><a href="index.php">Home</a></li>
+          <li><a href="index.php?halaman=discuss">Discuss</a></li>
           <li><a href="index.php?halaman=quiz">Quiz</a></li>
-          <li class="drop-down"><a href="index.php?halaman=courses">Courses</a>
-            <ul>
-              <li><a href="#">Grade</a></li>
-                <li class="drop-down"><a href="#">X</a>
-                <ul>
-                  <li><a href="courses.php?halaman=ddg">Dasar Desain Grafis</a></li>
-                  <li><a href="courses.php?halaman=kjd">Komputer dan Jaringan Dasar</a></li>
-                  <li><a href="courses.php?halaman=pd">Pemrograman Dasar</a></li>
-                  <li><a href="courses.php?halaman=skd">Simulasi Komunikasi dan Digital</a></li>                
-                  <li><a href="courses.php?halaman=sk">Sistem Komputer</a></li>
-                  <li><a href="courses.php?halaman=so">Sistem Operasi</a></li>
-                  </ul>
-                <li class="drop-down"><a href="#">XI</a>
-                <ul>
-                  <li><a href="courses.php?halaman=aij">Administrasi Infrastruktur Jaringan</a></li>
-                  <li><a href="courses.php?halaman=asj">Administrasi Sistem Jaringan</a></li>
-                  <li><a href="courses.php?halaman=tlj">Teknologi Layanan Jaringan</a></li>
-                  <li><a href="courses.php?halaman=tw">Teknologi WAN</a></li>
-                  </ul>
-                <li class="drop-down"><a href="#">XII</a>
-                <ul>
-                  <li><a href="courses.php?halaman=aij_2">Administrasi Infrastruktur Jaringan</a></li>
-                  <li><a href="courses.php?halaman=asj_2">Administrasi Sistem Jaringan</a></li>
-                  <li><a href="courses.php?halaman=tlj_2">Teknologi Layanan Jaringan</a></li>
-                  <li><a href="courses.php?halaman=pkk">Produk Kreatif dan Kewirausahaan</a></li>
-                  </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="index.php?halaman=help">Help</a></li>
+          <li><a href="index.php?halaman=courses">Courses</a>
           <li><a href="index.php?halaman=contact">Contact</a></li>
-
-
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -76,15 +46,16 @@
       $query = $dd->query($sql);
       $i=1;
       while($d = $query->fetch_array()) {
-?>
+?> 
             <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch mt-4 mt-lg-0">
               <div class="course-item">
+                <img src="assets/img/<?php echo htmlentities($d['image']);?>" class="img-fluid" alt="...">
                 <div class="course-content">
                   <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4>Kelas : <?php echo htmlentities($d['kelas']);?></h4>
-                    <h4>Jurusan :<?php echo htmlentities($d['jurusan']);?></h4>
+                    <h4><?php echo htmlentities($d['kelas']);?></h4>
+                    <h4><?php echo htmlentities($d['jurusan']);?></h4>
                   </div>
-
+  
                   <h3>Materi : <?php echo htmlentities($d['mapel']);?></h3>
                   <h4><?php echo htmlentities($d['nama_file']);?></h4>
                   <div class="trainer d-flex justify-content-between align-items-center">
