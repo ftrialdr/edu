@@ -1,19 +1,8 @@
 <?php
 
 //database_connection.php
-$mysqli = new mysqli("localhost","root","","widget");
-$dd = new mysqli("localhost","root","","db_download");
 
-if ($dd -> connect_errno) {
-  echo "Failed to connect to MySQL: ". $dd -> connect_error;
-  exit();
-}
-if ($mysqli -> connect_errno) {
-    echo "Failed to connect to MySQL: ". $mysqli -> connect_error;
-    exit();
-}
-
-$connect = new PDO("mysql:host=localhost;dbname=chat","root","");
+$connect = new PDO("mysql:host=localhost;dbname=chat;charset=utf8mb4", "root", "");
 
 date_default_timezone_set('Asia/Kolkata');
 
@@ -208,6 +197,7 @@ function fetch_group_chat_history($connect)
 		}
 
 		$output .= '
+
 		<li style="border-bottom:1px dotted #ccc;padding-top:8px; padding-left:8px; padding-right:8px;'.$dynamic_background.'">
 			<p>'.$user_name.' - '.$chat_message.' 
 				<div align="right">

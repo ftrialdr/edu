@@ -12,7 +12,7 @@ $message = '';
 
 if(isset($_SESSION['user_id']))
 {
-	header('location:index.php');
+	header('location:discuss.php');
 }
 
 if(isset($_POST["register"]))
@@ -76,29 +76,20 @@ if(isset($_POST["register"]))
 
 <html>  
     <head>  
-        <title>EduChat | Register</title>  
+        <title>Chat Application using PHP Ajax Jquery</title>  
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="assets/img/eduu.png" rel="icon">
-  		<link href="assets/img/eduu.png" rel="eduu">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  		<link href="assets/css/style.css" rel="stylesheet">
     </head>  
     <body>  
         <div class="container">
 			<br />
-			    <!-- ======= Breadcrumbs ======= -->
-			    <div class="breadcrumbs" data-aos="fade-in">
-			      <div class="container">
-			        <h2>EduChat | Register</h2>
-			      </div>
-			    </div>
-			    <!-- End Breadcrumbs -->
+			
+			<h3 align="center">Chat Application using PHP Ajax Jquery</a></h3><br />
 			<br />
-
 			<div class="panel panel-default">
-  				<div align="center" class="panel-heading">Let's Register to get your account</div>
+  				<div class="panel-heading">Chat Application Register</div>
 				<div class="panel-body">
 					<form method="post">
 						<span class="text-danger"><?php echo $message; ?></span>

@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<?php 
-	require 'database_connection.php';
-	$sql2 = "select x.kelas from courses x group by x.kelas having x.kelas != ''";
-	$query_p = $dd->query($sql2);
-?>
-
 <html lang="en">
 
 <head>
@@ -15,9 +9,9 @@
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
-  <!-- icons -->
-  <link href="assets/img/eduu.png" rel="icon">
-  <link href="assets/img/eduu.png" rel="eduu">
+  <!-- Favicons -->
+  <link href="assets/img/edu-icon.png" rel="icon">
+  <link href="assets/img/edu-icon.png" rel="edu-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -48,17 +42,45 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li><a href="index.php">Home</a></li>
+          <li class="active"><a href="index.php">Home</a></li>
           <li><a href="index.php?halaman=discuss">Discuss</a></li>
           <li><a href="index.php?halaman=quiz">Quiz</a></li>
-          <li><a href="index.php?halaman=courses">Courses</a>
+          <li class="drop-down"><a href="index.php?halaman=courses">Courses</a>
+            <ul>
+              <li><a href="#">Grade</a></li>
+                <li class="drop-down"><a href="#">X</a>
+                <ul>
+                  <li><a href="#">Dasar Desain Grafis</a></li>
+                  <li><a href="#">Pemrograman Dasar</a></li>
+                  <li><a href="#">Sistem Komputer</a></li>
+                  <li><a href="#">Komputer dan Jaringan Dasar</a></li>
+                  <li><a href="#">Simulasi Komunikasi dan Digital</a></li>
+                  </ul>
+                <li class="drop-down"><a href="#">XI</a>
+                <ul>
+                  <li><a href="#">Administrasi Infrastruktur Jaringan</a></li>
+                  <li><a href="#">Administrasi Sistem Jaringan</a></li>
+                  <li><a href="#">Teknologi Layanan Jaringan</a></li>
+                  <li><a href="#">Teknologi WAN</a></li>
+                  </ul>
+                <li class="drop-down"><a href="#">XII</a>
+                <ul>
+                  <li><a href="#">Administrasi Infrastruktur Jaringan</a></li>
+                  <li><a href="#">Administrasi Sistem Jaringan</a></li>
+                  <li><a href="#">Teknologi Layanan Jaringan</a></li>
+                  <li><a href="#">Teknologi WAN</a></li>
+                  </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="index.php?halaman=help">Help</a></li>
           <li><a href="index.php?halaman=contact">Contact</a></li>
 
 
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="login.php" class="get-started-btn">Join Chat</a>
+      <a href="login.php" class="get-started-btn">Login</a>
 
     </div>
   </header><!-- End Header -->
@@ -82,10 +104,13 @@
                 include 'courses.php';
               }
               elseif ($_GET['halaman']=="discuss") {
-                include 'login.php';
+                include 'discuss.php';
               }
               elseif ($_GET['halaman']=="quiz") {
                 include 'quiz.php';
+              } 
+              elseif ($_GET['halaman']=="help") {
+                include 'help.php';
               }
               elseif ($_GET['halaman']=="contact") {
                 include 'contact.php';
@@ -98,6 +123,16 @@
             include 'home.php';
           }
           ?>
+
+      <!-- ======= Why Us Section ======= -->
+    <div id="page-wrapper" >
+       <div id="page-inner">
+          
+         </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -127,6 +162,12 @@
             </ul>
           </div>
 
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Dukung kami dengan Subscribe Gratis</h4>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
 
         </div>
       </div>
@@ -139,6 +180,10 @@
           &copy; Copyright <strong><span>EDUCATKJ</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
           Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
