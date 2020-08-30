@@ -1,8 +1,12 @@
 <?php
             $mysqli = new
             mysqli("localhost","root","","db_download");
+            $dd = new mysqli("localhost","root","","db_download");
 
-            //check connection         
+            if ($dd -> connect_errno) {
+              echo "Failed to connect to MySQL: ". $dd -> connect_error;
+              exit();
+            }
             if ($mysqli -> connect_errno) {
               echo "Failed to connect to MySQL:
               ". $mysqli -> connect_error;

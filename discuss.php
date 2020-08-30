@@ -1,14 +1,3 @@
-<?php
-            $mysqli = new
-            mysqli("localhost","root","","chat");
-
-            //check connection         
-            if ($mysqli -> connect_errno) {
-              echo "Failed to connect to MySQL:
-              ". $mysqli -> connect_error;
-              exit();
-            }    
-            ?>    
 <!--
 //discuss.php
 !-->
@@ -31,7 +20,7 @@ if(!isset($_SESSION['user_id']))
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Chat Application using PHP Ajax Jquery</title>  
+        <title>EduChat</title>  
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.css">
@@ -44,7 +33,7 @@ if(!isset($_SESSION['user_id']))
         <div class="container">
 			<br />
 			
-			<h3 align="center">Chat Application using PHP Ajax Jquery</h3><br />
+			<h3 align="center">EduChat</h3><br />
 			<br />
 			<div class="row">
 				<div class="col-md-8 col-sm-6">

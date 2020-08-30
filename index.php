@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/edu-icon.png" rel="icon">
-  <link href="assets/img/edu-icon.png" rel="edu-icon">
+  <link href="assets/img/eduu.png" rel="icon">
+  <link href="assets/img/eduu.png" rel="edu-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -42,45 +42,17 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.php">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="index.php?halaman=discuss">Discuss</a></li>
           <li><a href="index.php?halaman=quiz">Quiz</a></li>
-          <li class="drop-down"><a href="index.php?halaman=courses">Courses</a>
-            <ul>
-              <li><a href="#">Grade</a></li>
-                <li class="drop-down"><a href="#">X</a>
-                <ul>
-                  <li><a href="#">Dasar Desain Grafis</a></li>
-                  <li><a href="#">Pemrograman Dasar</a></li>
-                  <li><a href="#">Sistem Komputer</a></li>
-                  <li><a href="#">Komputer dan Jaringan Dasar</a></li>
-                  <li><a href="#">Simulasi Komunikasi dan Digital</a></li>
-                  </ul>
-                <li class="drop-down"><a href="#">XI</a>
-                <ul>
-                  <li><a href="#">Administrasi Infrastruktur Jaringan</a></li>
-                  <li><a href="#">Administrasi Sistem Jaringan</a></li>
-                  <li><a href="#">Teknologi Layanan Jaringan</a></li>
-                  <li><a href="#">Teknologi WAN</a></li>
-                  </ul>
-                <li class="drop-down"><a href="#">XII</a>
-                <ul>
-                  <li><a href="#">Administrasi Infrastruktur Jaringan</a></li>
-                  <li><a href="#">Administrasi Sistem Jaringan</a></li>
-                  <li><a href="#">Teknologi Layanan Jaringan</a></li>
-                  <li><a href="#">Teknologi WAN</a></li>
-                  </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="index.php?halaman=help">Help</a></li>
+          <li><a href="index.php?halaman=courses">Courses</a></li>
           <li><a href="index.php?halaman=contact">Contact</a></li>
 
 
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="login.php" class="get-started-btn">Login</a>
+      <a href="login.php" class="get-started-btn">Join Chat</a>
 
     </div>
   </header><!-- End Header -->
@@ -151,17 +123,6 @@
             </p>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Dukung kami dengan Subscribe Gratis</h4>
             <form action="" method="post">
@@ -179,20 +140,11 @@
         <div class="copyright">
           &copy; Copyright <strong><span>EDUCATKJ</span></strong>. All Rights Reserved
         </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->

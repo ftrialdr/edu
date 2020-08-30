@@ -55,7 +55,7 @@ if(isset($_POST['login']))
 	}
 	else
 	{
-		$message = '<label>Wrong Username</label>';
+		$message = '<label>Wrong Username</labe>';
 	}
 }
 
@@ -64,7 +64,7 @@ if(isset($_POST['login']))
 
 <html>  
     <head>  
-        <title>Chat Application using PHP Ajax Jquery</title>  
+        <title>EduChat | Login</title>  
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -74,10 +74,10 @@ if(isset($_POST['login']))
         <div class="container">
 			<br />
 			
-			<h3 align="center">Chat Application using PHP Ajax Jquery</h3><br />
+			<h3 align="center">EduChat</h3><br />
 			<br />
 			<div class="panel panel-default">
-  				<div class="panel-heading">Chat Application Login</div>
+  				<div align="center" class="panel-heading">EduChat Login</div>
 				<div class="panel-body">
 					<p class="text-danger"><?php echo $message; ?></p>
 					<form method="post">
