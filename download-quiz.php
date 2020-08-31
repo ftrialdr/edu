@@ -2,7 +2,7 @@
 if (isset($_GET['filename'])) {
 $filename	= $_GET['filename'];
 
-	$back_dir	="assets/doc/";
+	$back_dir	="assets/app";
 	$file = $back_dir.$_GET['filename'];
 	 
 	if (file_exists($file)) {
@@ -18,11 +18,11 @@ $filename	= $_GET['filename'];
 		flush();
 		readfile($file);
 		
-		exit;
+		exit; 
 	} 
 	else {
 		$_SESSION['pesan'] = "Oops! File - $filename - not found ...";
-		header("location:courses.php");
+		header("location:quiz.php");
 	}
 }
 ?>

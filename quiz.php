@@ -17,16 +17,21 @@
       </div>
     </div><!-- End Breadcrumbs -->
 
-  <?php 
-        $sql = "SELECT * from courses ORDER BY id_materi" ;
-        $query = $dd->query($sql);
-        $i=1;
-        while($d = $query->fetch_array()) {
-  ?> 
+
         <!-- ======= Hero Section ======= -->
 		  <section class="d-flex justify-content-center align-items-center">
+        <?php
+          $no=0;
+          $query = $mysqli->query("SELECT * FROM tb_download ORDER BY id"); 
+          while ($data = $query->fetch_array ()){ 
+          $no++
+        ?>
 		    <div align="center" class="container" data-aos="zoom-in" data-aos-delay="100">
-		      <a href="download.php?filename=<?=$d['nama_file']?>"class="get-started-btn">Download</a>
+          <?php echo $data['nama_file']; ?>
+		      <a href="download-quiz.php?filename=<?=$data['nama_file']?>"class="get-started-btn">Download</a>
 		    </div>
+        <?php 
+        } 
+        ?>
 		  </section>
  	    <!-- End Hero -->
