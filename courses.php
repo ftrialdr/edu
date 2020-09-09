@@ -53,12 +53,29 @@
     <div class="container" data-aos="fade-up">
           
       <div class="row" data-aos="zoom-in" data-aos-delay="100">
-<?php 
-      $sql = "SELECT * from courses ORDER BY id_materi" ;
+<?php
+    //pagination
+    //konfigurasi
+  $jumlahDataPerHalaman = 35;
+  $jumlahData = count(query("SELECT * from courses"));
+  $jumlahHalaman = $jumlahData / $jumlahDataPerHalaman;
+  $halamanAktif = ( isset($_GET["halaman"]) ) ? $_GET["halaman"] : 1;
+  $awalData = $jumlahDataPerHalaman * $halamanAktif - $jumlahDataPerHalaman;
+
+      $sql = ("SELECT * from courses ORDER BY id_materi limit $awalData, $jumlahDataPerHalaman") ;
       $query = $dd->query($sql);
       $i=1;
       while($d = $query->fetch_array()) {
 ?> 
+
+    <?php for( $i = 1; $i <= $jumlahHalaman; $i++ ) : ?>
+      <?php if( $i == $halamanAktif) : ?>
+      <a href="?halaman=<?= $i; ?>"style="font-weight: bold; color: red;"><?= $i; ?></a>
+      <?php else : ?>
+
+      <?php endif ; ?>
+    <?php endfor; ?>
+
             <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch mt-4 mt-lg-0">
               <div class="course-item">
                 <img src="assets/img/<?php echo htmlentities($d['image']);?>" class="img-fluid" alt="...">

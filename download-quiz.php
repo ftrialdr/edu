@@ -2,7 +2,7 @@
 if (isset($_GET['filename'])) {
 $filename	= $_GET['filename'];
 
-	$back_dir	="assets/app";
+	$back_dir	="assets/app/";
 	$file = $back_dir.$_GET['filename'];
 	 
 	if (file_exists($file)) {

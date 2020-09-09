@@ -122,14 +122,6 @@
               <strong>Email support:</strong> stmnegerigk@yahoo.com<br>
             </p>
           </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Dukung kami dengan Subscribe Gratis</h4>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-
         </div>
       </div>
     </div>

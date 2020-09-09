@@ -55,7 +55,7 @@ if(isset($_POST['login']))
 	}
 	else
 	{
-		$message = '<label>Wrong Username</labe>';
+		$message = '<label>Wrong Username</label>';
 	}
 }
 
