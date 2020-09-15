@@ -81,6 +81,8 @@ if(isset($_POST["register"]))
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  		<link href="assets/img/eduu.png" rel="icon">
+  		<link href="assets/img/eduu.png" rel="edu-icon">
     </head>  
     <body>  
         <div class="container">

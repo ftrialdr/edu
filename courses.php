@@ -1,4 +1,5 @@
 <?php
+        require 'functions.php';
             $mysqli = new
             mysqli("localhost","root","","db_download");
             $dd = new mysqli("localhost","root","","db_download");
@@ -12,6 +13,7 @@
               ". $mysqli -> connect_error;
               exit();
             }
+
 ?> 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -23,7 +25,6 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li><a href="index.php">Home</a></li>
-          <li><a href="index.php?halaman=discuss">Discuss</a></li>
           <li><a href="index.php?halaman=quiz">Quiz</a></li>
           <li><a href="index.php?halaman=courses">Courses</a>
           <li><a href="index.php?halaman=contact">Contact</a></li>
@@ -45,37 +46,40 @@
     <!-- End Breadcrumbs -->
 
   <main id="main">
-    
+
+  <br>
+
+  <!-- ======= Search Engine ======= -->
+  <div class="container" data-aos="fade-up">
+    <form class="form-horizontal" role="search" method="post">
+        <div class="col-md-8 col-xs-12">
+            <input type="text" name="keyword" autofocus="" placeholder="Masukkan keyword" autocomplete="off">
+            <button type="submit" name="cari">Search</button>
+        </div>
+    </form>
+  <div>
+  <!-- ======= End Search Engine ======= -->
 
 <!-- ======= Courses Section ======= -->
-    <section id="courses" class="courses">
-
+  <section id="courses" class="courses">
+    
     <div class="container" data-aos="fade-up">
           
       <div class="row" data-aos="zoom-in" data-aos-delay="100">
-<?php
-    //pagination
-    //konfigurasi
-  $jumlahDataPerHalaman = 35;
-  $jumlahData = count(query("SELECT * from courses"));
-  $jumlahHalaman = $jumlahData / $jumlahDataPerHalaman;
-  $halamanAktif = ( isset($_GET["halaman"]) ) ? $_GET["halaman"] : 1;
-  $awalData = $jumlahDataPerHalaman * $halamanAktif - $jumlahDataPerHalaman;
+        <?php
 
-      $sql = ("SELECT * from courses ORDER BY id_materi limit $awalData, $jumlahDataPerHalaman") ;
-      $query = $dd->query($sql);
-      $i=1;
-      while($d = $query->fetch_array()) {
-?> 
+              $sql = ("SELECT * from courses ORDER BY id_materi ASC") ;
+              $query = $dd->query($sql);
+              $i=1;
+              while($d = $query->fetch_array()) {
 
-    <?php for( $i = 1; $i <= $jumlahHalaman; $i++ ) : ?>
-      <?php if( $i == $halamanAktif) : ?>
-      <a href="?halaman=<?= $i; ?>"style="font-weight: bold; color: red;"><?= $i; ?></a>
-      <?php else : ?>
+              //tombol cari ditekan
+              if( isset($_POST["cari"]) ){
+                $dd = cari($_POST["keyword"]);
 
-      <?php endif ; ?>
-    <?php endfor; ?>
-
+                }
+        ?> 
+          
             <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch mt-4 mt-lg-0">
               <div class="course-item">
                 <img src="assets/img/<?php echo htmlentities($d['image']);?>" class="img-fluid" alt="...">
@@ -105,9 +109,5 @@
 ?>
             </div> <!-- End Course Item-->
           </div>
-        
-    </section><!-- End Courses Section -->
-
-
-
   
+    </section><!-- End Courses Section -->

@@ -43,7 +43,6 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li><a href="index.php">Home</a></li>
-          <li><a href="index.php?halaman=discuss">Discuss</a></li>
           <li><a href="index.php?halaman=quiz">Quiz</a></li>
           <li><a href="index.php?halaman=courses">Courses</a></li>
           <li><a href="index.php?halaman=contact">Contact</a></li>
@@ -86,6 +85,9 @@
               }
               elseif ($_GET['halaman']=="contact") {
                 include 'contact.php';
+              }
+              elseif ($_GET['halaman']=="search") {
+                include 'search.php';
               }{
 
               }
